@@ -4,9 +4,6 @@ const accountRouter = express.Router();
 const {Account} = require("./../root/db")
 const mongoose=require("mongoose");
 
-
-
-
 accountRouter.get("/balance", authMiddleware, async (req, res) => {
     const account = await Account.findOne({
         userId: req.userId
@@ -53,7 +50,4 @@ accountRouter.post("/transfer", authMiddleware, async (req, res) => {
     });
 });
 
-
-
-
-module.exports= accountRouter
+module.exports= accountRouter 
